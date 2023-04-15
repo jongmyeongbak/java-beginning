@@ -1,2 +1,2 @@
-# java-beginning (jm-onboarding KDT)
-Each branch has each a java-project. Kind of monorepo strategy is applied.
+# java-beginning (JM-onboarding KDT)
+Each branch has a java-project. Kind of monorepo strategy is applied.
