@@ -145,7 +145,7 @@ public class ProductDao {
 //		
 //	}
 	
-	public boolean deleteProduct(int no) throws SQLException {
+	public int deleteProduct(int no) throws SQLException {
 		String sql = "delete from sample_products "
 				+ "where product_no = ?";
 		
@@ -153,11 +153,11 @@ public class ProductDao {
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, no);
 		
-		boolean isDeleted = pstmt.executeUpdate() > 0 ? true : false;
+		int rowCnt = pstmt.executeUpdate();
 		
 		pstmt.close();
 		con.close();
 		
-		return isDeleted;
+		return rowCnt;
 	}
 }

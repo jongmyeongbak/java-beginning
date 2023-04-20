@@ -153,12 +153,8 @@ public class ProductApp {
 		System.out.println("### 삭제할 상품번호를 입력하세요.");
 		
 		System.out.print("### 상품번호: ");
-		boolean isDeleted = dao.deleteProduct(reader.readInt());
-		if (isDeleted) {
-			System.out.println("### 상품정보가 삭제되었습니다.");
-		} else {
-			System.out.println("### 상품정보가 삭제되지 않았습니다.");
-		}
+		int rowCnt = dao.deleteProduct(reader.readInt());
+		System.out.println(rowCnt > 0 ? "### 상품정보가 삭제되었습니다." : "### 상품정보가 삭제되지 않았습니다.");
 	}
 
 	private void 종료() {
