@@ -128,11 +128,11 @@ public class ProductDao {
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, no);
 		
-		boolean deleted = pstmt.executeUpdate() > 0 ? true : false;
+		boolean isDeleted = pstmt.executeUpdate() > 0 ? true : false;
 		
 		pstmt.close();
 		con.close();
 		
-		return deleted;
+		return isDeleted;
 	}
 }

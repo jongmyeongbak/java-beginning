@@ -11,7 +11,7 @@ public class Product {
 	private int price;
 	private double discountRate;
 	private int stock;
-	private Date date;
+	private Date createDate;
 	
 	public Product() {
 	}
@@ -24,7 +24,7 @@ public class Product {
 		this.price = price;
 		this.discountRate = discountRate;
 		this.stock = stock;
-		this.date = date;
+		this.createDate = date;
 	}
 	
 	public int getNo() {
@@ -63,11 +63,11 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	public Date getDate() {
-		return date;
+	public Date getCreateDate() {
+		return createDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 	
 	public int getDiscountedPrice() {

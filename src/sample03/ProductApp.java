@@ -61,7 +61,7 @@ public class ProductApp {
 					+ product.getDiscountRate() * 100 + "%" + "\t"
 					+ product.getDiscountedPrice() + "\t"
 					+ product.getStock() + "\t"
-					+ product.getDate());
+					+ product.getCreateDate());
 		}
 	}
 
@@ -93,7 +93,7 @@ public class ProductApp {
 					+ obj[1] + "\t"
 //					+ product.getDiscountedPrice() + "\t"
 					+ product.getStock() + "\t"
-					+ product.getDate());
+					+ product.getCreateDate());
 		}
 	}
 
@@ -116,7 +116,7 @@ public class ProductApp {
 			System.out.println("할인율: " + product.getDiscountRate() * 100 + "%");
 			System.out.println("할인가: " + product.getDiscountedPrice());
 			System.out.println("재고수량: " + product.getStock());
-			System.out.println("신규등록일: " + product.getDate());
+			System.out.println("신규등록일: " + product.getCreateDate());
 			System.out.println("--------------------------");
 		}
 	}
@@ -147,8 +147,8 @@ public class ProductApp {
 		System.out.println("### 상품번호를 입력하여 해당 상품정보를 삭제하세요.");
 		
 		System.out.print("상품번호: ");
-		boolean deleted = dao.deleteProduct(reader.readInt());
-		if (deleted) {
+		boolean isDeleted = dao.deleteProduct(reader.readInt());
+		if (isDeleted) {
 			System.out.println("### 상품정보가 삭제되었습니다.");
 		} else {
 			System.out.println("### 상품정보가 삭제되지 않았습니다.");
