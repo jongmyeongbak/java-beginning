@@ -74,9 +74,9 @@ public class ProductApp {
 		System.out.println("<< 가격 지정 상품정보 조회 >>");
 		System.out.println("### 최소가격 및 최대가격을 입력하여 상품정보를 조회하세요.");
 		
-		System.out.print("### 최소가격 입력: ");
+		System.out.print("### 최소가격: ");
 		int minPrice = reader.readInt();
-		System.out.print("### 최대가격 입력: ");
+		System.out.print("### 최대가격: ");
 		int maxPrice = reader.readInt();
 		if (minPrice > maxPrice) {
 			System.out.println("### 최대가격이 최소가격보다 커야 합니다.");
@@ -106,7 +106,7 @@ public class ProductApp {
 		System.out.println("<< 상세 상품정보 조회 >>");
 		System.out.println("### 조회할 상품번호를 입력하세요.");
 		
-		System.out.print("상품번호: ");
+		System.out.print("### 상품번호 입력: ");
 		int no = reader.readInt();
 		Product product = dao.getProductByNo(no);
 		if (product == null) {
@@ -130,15 +130,15 @@ public class ProductApp {
 		System.out.println("<< 신규 상품정보 등록 >>");
 		System.out.println("### 상품명, 제조사, 가격, 할인율, 수량을 입력하여 상품정보를 등록하세요.");
 		
-		System.out.print("상품명: ");
+		System.out.print("### 상품명: ");
 		String name = reader.readString();
-		System.out.print("제조사: ");
+		System.out.print("### 제조사: ");
 		String maker = reader.readString();
-		System.out.print("가격: ");
+		System.out.print("### 가격: ");
 		int price = reader.readInt();
-		System.out.print("할인율: ");
+		System.out.print("### 할인율: ");
 		double discountRate = reader.readDouble();
-		System.out.print("수량: ");
+		System.out.print("### 수량: ");
 		int stock = reader.readInt();
 		
 		Product product = new Product(0, name, maker, price, discountRate, stock, null);
@@ -151,7 +151,7 @@ public class ProductApp {
 		System.out.println("<< 상품정보 삭제 >>");
 		System.out.println("### 상품번호를 입력하여 해당 상품정보를 삭제하세요.");
 		
-		System.out.print("상품번호: ");
+		System.out.print("### 상품번호: ");
 		boolean isDeleted = dao.deleteProduct(reader.readInt());
 		if (isDeleted) {
 			System.out.println("### 상품정보가 삭제되었습니다.");
