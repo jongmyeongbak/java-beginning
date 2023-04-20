@@ -73,4 +73,7 @@ public class Product {
 	public int getDiscountedPrice() {
 		return price - (int) (price * discountRate);
 	}
+	public String getDiscountPct() {
+		return (int) (discountRate*100) + "%";
+	}
 }

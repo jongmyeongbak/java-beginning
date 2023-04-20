@@ -58,7 +58,7 @@ public class ProductApp {
 					+ product.getName() + "\t"
 					+ product.getMaker() + "\t"
 					+ product.getPrice() + "\t"
-					+ product.getDiscountRate() * 100 + "%" + "\t"
+					+ product.getDiscountPct() + "\t"
 					+ product.getDiscountedPrice() + "\t"
 					+ product.getStock() + "\t"
 					+ product.getCreateDate());
@@ -89,7 +89,7 @@ public class ProductApp {
 					+ product.getName() + "\t"
 					+ product.getMaker() + "\t"
 					+ product.getPrice() + "\t"
-					+ product.getDiscountRate() * 100 + "%" + "\t"
+					+ product.getDiscountPct() + "\t"
 					+ obj[1] + "\t"
 //					+ product.getDiscountedPrice() + "\t"
 					+ product.getStock() + "\t"
@@ -113,7 +113,7 @@ public class ProductApp {
 			System.out.println("상품명: " + product.getName());
 			System.out.println("제조사: " + product.getMaker());
 			System.out.println("정가: " + product.getPrice());
-			System.out.println("할인율: " + product.getDiscountRate() * 100 + "%");
+			System.out.println("할인율: " + product.getDiscountPct());
 			System.out.println("할인가: " + product.getDiscountedPrice());
 			System.out.println("재고수량: " + product.getStock());
 			System.out.println("신규등록일: " + product.getCreateDate());
