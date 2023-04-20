@@ -104,7 +104,7 @@ public class ProductApp {
 
 	private void 상세조회() throws SQLException {
 		System.out.println("<< 상세 상품정보 조회 >>");
-		System.out.println("### 상품번호를 입력하여 해당 정보를 확인하세요.");
+		System.out.println("### 조회할 상품번호를 입력하세요.");
 		
 		System.out.print("상품번호: ");
 		int no = reader.readInt();
