@@ -32,15 +32,22 @@ public class ProductDao {
 	}
 	
 	public List<Product> getAllProducts() throws SQLException {
-		String sql = "select product_no, product_name, product_maker, product_price, product_discount_rate, product_stock, product_create_date "
+		String sql = "select product_no,"
+				+ " product_name,"
+				+ " product_maker,"
+				+ " product_price,"
+				+ " product_discount_rate,"
+				+ " product_stock,"
+				+ " product_create_date "
 				+ "from sample_products "
-				+ "order by product_no";
+				+ "order by product_no desc ";
 		
 		List<Product> products = new ArrayList<>();
+		
 		Connection con = ConnUtils.getConnections();
 		PreparedStatement pstmt = con.prepareStatement(sql);
-		ResultSet rs = pstmt.executeQuery();
 		
+		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {
 			Product product = new Product(rs.getInt("product_no"),
 					rs.getString("product_name"),
@@ -63,7 +70,7 @@ public class ProductDao {
 		String sql = "select product_no, product_name, product_maker, product_price, product_discount_rate, product_stock, product_create_date, product_price - (product_price * product_discount_rate) AS discounted_price "
 				+ "from sample_products "
 				+ "where product_price between ? and ? "
-				+ "order by discounted_price, product_discount_rate desc, product_no";
+				+ "order by discounted_price, product_discount_rate desc, product_no desc";
 		
 		List<Object[]> products = new ArrayList<>();
 		Connection con = ConnUtils.getConnections();
@@ -91,13 +98,20 @@ public class ProductDao {
 	}
 	
 	public Product getProductByNo(int no) throws SQLException {
-		String sql = "select product_no, product_name, product_maker, product_price, product_discount_rate, product_stock, product_create_date "
+		String sql = "select product_no,"
+				+ " product_name,"
+				+ " product_maker,"
+				+ " product_price,"
+				+ " product_discount_rate,"
+				+ " product_stock,"
+				+ " product_create_date "
 				+ "from sample_products "
 				+ "where product_no = ?";
 		
 		Connection con = ConnUtils.getConnections();
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, no);
+		
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
 			return new Product(rs.getInt("product_no"),
