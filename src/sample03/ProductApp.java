@@ -13,7 +13,7 @@ public class ProductApp {
 	public void menu() {
 		System.out.println("### 상품정보 관리 프로그램 ###");
 		System.out.println("------------------------------------------------------------");
-		System.out.println("1.전체조회  2.가격조회  3.상세조회  4.신규등록  5.삭제  0.종료");
+		System.out.println("1.전체조회  2.검색  3.상세조회  4.신규등록  5.삭제  0.종료");
 		System.out.println("------------------------------------------------------------");
 		System.out.println();
 		
@@ -25,7 +25,7 @@ public class ProductApp {
 			if (menuNo == 1) {
 				전체조회();
 			} else if (menuNo == 2) {
-				가격조회();
+				검색();
 			} else if (menuNo == 3) {
 				상세조회();
 			} else if (menuNo == 4) {
@@ -70,16 +70,16 @@ public class ProductApp {
 		}
 	}
 
-	private void 가격조회() throws SQLException {
-		System.out.println("<< 가격 지정 상품정보 조회 >>");
-		System.out.println("### 최소가격 및 최대가격을 입력하여 상품정보를 조회하세요.");
+	private void 검색() throws SQLException {
+		System.out.println("<< 상품 가격 검색 >>");
+		System.out.println("### 최소가격 및 최대가격을 입력하여 상품정보를 검색하세요.");
 		
 		System.out.print("### 최소가격: ");
 		int minPrice = reader.readInt();
 		System.out.print("### 최대가격: ");
 		int maxPrice = reader.readInt();
 		if (minPrice > maxPrice) {
-			System.out.println("### 최대가격이 최소가격보다 커야 합니다.");
+			System.out.println("### 최대가격이 최소가격보다 크거나 같아야 합니다.");
 			return;
 		}
 		
@@ -150,7 +150,7 @@ public class ProductApp {
 
 	private void 삭제() throws SQLException {
 		System.out.println("<< 상품정보 삭제 >>");
-		System.out.println("### 상품번호를 입력하여 해당 상품정보를 삭제하세요.");
+		System.out.println("### 삭제할 상품번호를 입력하세요.");
 		
 		System.out.print("### 상품번호: ");
 		boolean isDeleted = dao.deleteProduct(reader.readInt());
