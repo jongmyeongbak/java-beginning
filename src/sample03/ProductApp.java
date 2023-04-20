@@ -66,7 +66,7 @@ public class ProductApp {
 	}
 
 	private void 가격조회() throws SQLException {
-		System.out.println("<< 가격 범위로 상품정보 조회 >>");
+		System.out.println("<< 가격 지정 상품정보 조회 >>");
 		System.out.println("### 최소가격 및 최대가격을 입력하여 상품정보를 조회하세요.");
 		
 		System.out.print("### 최소가격 입력: ");
