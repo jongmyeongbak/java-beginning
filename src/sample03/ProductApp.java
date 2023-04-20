@@ -89,9 +89,9 @@ public class ProductApp {
 					+ product.getName() + "\t"
 					+ product.getMaker() + "\t"
 					+ product.getPrice() + "\t"
-//					+ product.getDiscountRate() * 100 + "%" + "\t"
+					+ product.getDiscountRate() * 100 + "%" + "\t"
 					+ obj[1] + "\t"
-					+ product.getDiscountedPrice() + "\t"
+//					+ product.getDiscountedPrice() + "\t"
 					+ product.getStock() + "\t"
 					+ product.getDate());
 		}
