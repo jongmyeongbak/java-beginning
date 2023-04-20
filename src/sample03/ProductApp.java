@@ -56,7 +56,7 @@ public class ProductApp {
 		}
 		
 		System.out.println("-----------------------------------------------------------------------");
-		System.out.println("상품번호\t상품명\t제조사\t가격\t할인율\t할인가\t재고수량\t신규등록일");
+		System.out.println("상품번호\t상품명\t제조사\t가격\t할인율\t할인가\t재고수량\t등록일자");
 		System.out.println("-----------------------------------------------------------------------");
 		for (Product product : products) {
 			System.out.println(product.getNo() + "\t"
@@ -86,7 +86,7 @@ public class ProductApp {
 		List<Object[]> products = dao.getProductsByPrice(minPrice, maxPrice);
 
 		System.out.println("-----------------------------------------------------------------------");
-		System.out.println("상품번호\t상품명\t제조사\t정가\t할인율\t할인가\t재고수량\t신규등록일");
+		System.out.println("상품번호\t상품명\t제조사\t정가\t할인율\t할인가\t재고수량\t등록일자");
 		System.out.println("-----------------------------------------------------------------------");
 		for (Object[] obj : products) {
 			Product product = (Product) obj[0];
@@ -108,9 +108,10 @@ public class ProductApp {
 		
 		System.out.print("### 상품번호 입력: ");
 		int no = reader.readInt();
+		
 		Product product = dao.getProductByNo(no);
 		if (product == null) {
-			System.out.println("### 상품정보가 존재하지 않습니다.");
+			System.out.println("### [" + no + "]번 상품정보가 존재하지 않습니다.");
 		} else {
 			System.out.println("--------------------------");
 			System.out.println("상품번호 [" + no + "]의 정보");
@@ -121,7 +122,7 @@ public class ProductApp {
 			System.out.println("할인율: " + product.getDiscountPct());
 			System.out.println("할인가: " + product.getDiscountedPrice());
 			System.out.println("재고수량: " + product.getStock());
-			System.out.println("신규등록일: " + product.getCreateDate());
+			System.out.println("등록일자: " + product.getCreateDate());
 			System.out.println("--------------------------");
 		}
 	}
