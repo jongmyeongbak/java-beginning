@@ -146,11 +146,22 @@ public class ScoreDao {
 	/**
 	 * 수정된 성적정보가 포함된 성적정보를 전달받아 SAMPLE_SCORES 테이블에 반영한다.
 	 * @param score
+	 * @throws SQLException 
 	 */
-	public void updateScore(Score score) {
+	public void updateScore(Score score) throws SQLException {
 		String sql = "update sample_score "
 				+ "set kor_score = ?, eng_score = ?, math_score = ? "
-				+ "where ";
+				+ "where student_no = ? ";
 		
+		Connection con = ConnUtils.getConnections();
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, score.getKor());
+		pstmt.setInt(2, score.getEng());
+		pstmt.setInt(3, score.getMath());
+		pstmt.setInt(4, score.getStudentNo());
+		pstmt.executeUpdate();
+		
+		pstmt.close();
+		con.close();
 	}
 }
