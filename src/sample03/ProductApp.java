@@ -50,6 +50,11 @@ public class ProductApp {
 		
 		List<Product> products = dao.getAllProducts();
 		
+		if (products.isEmpty()) {
+			System.out.println("### 상품정보가 존재하지 않습니다.");
+			return;
+		}
+		
 		System.out.println("-----------------------------------------------------------------------");
 		System.out.println("상품번호\t상품명\t제조사\t가격\t할인율\t할인가\t재고수량\t신규등록일");
 		System.out.println("-----------------------------------------------------------------------");
